@@ -1,0 +1,1 @@
+A skeleton set of files and a Maven-based build for a new Docbook document.

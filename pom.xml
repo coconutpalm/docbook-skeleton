@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns="http://maven.apache.org/POM/4.0.0"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+
+	<modelVersion>4.0.0</modelVersion>
+
+	<groupId>com.coconut_palm_software</groupId>
+	<artifactId>com.coconut_palm_software.newdoc</artifactId>
+	<version>1.0.0-SNAPSHOT</version>
+	<name>A book or document</name>
+	<packaging>pom</packaging>
+
+	<build>
+		<plugins>
+
+			<plugin>
+				<groupId>com.agilejava.docbkx</groupId>
+				<artifactId>docbkx-maven-plugin</artifactId>
+				<version>2.0.14</version>
+				<dependencies>
+					<dependency>
+						<groupId>net.sf.docbook</groupId>
+						<artifactId>docbook-xml</artifactId>
+						<version>5.0-all</version>
+						<classifier>resources</classifier>
+						<type>zip</type>
+						<scope>runtime</scope>
+					</dependency>
+				</dependencies>
+				<executions>
+					<execution>
+						<phase>install</phase>
+						<goals>
+							<goal>generate-html</goal>
+							<goal>generate-pdf</goal>
+							<goal>generate-epub</goal>
+							<goal>generate-eclipse</goal>
+						</goals>
+					</execution>
+				</executions>
+
+				<configuration>
+					<sourceDirectory>${basedir}/src/content/</sourceDirectory>
+					<targetDirectory>${basedir}/target/output/</targetDirectory>
+					
+					<useExtensions>true</useExtensions>
+					<textinsertExtension>true</textinsertExtension>
+					<linenumberingExtension>true</linenumberingExtension>
+					<highlightSource>true</highlightSource>
+					
+					<eclipsePluginId>com.my.org.doc.help</eclipsePluginId>
+					<preProcess>
+						<copy todir="target/content/">
+							<fileset dir="src/content/">
+								<include name="**/*.png" />
+							</fileset>
+						</copy>
+						<copy todir="target/static">
+							<fileset dir="src/static" />
+						</copy>
+						<!-- <copy todir="target/HighLevelOverview/eclipse/documentation/figures"> 
+							<fileset dir="src/HighLevelOverview/figures" /> </copy> -->
+					</preProcess>
+					<includes>**/*-index.xml</includes>
+					<xincludeSupported>true</xincludeSupported>
+					<htmlStylesheetType>text/css</htmlStylesheetType>
+					<htmlStylesheet>../static/css/html.css</htmlStylesheet>
+					<sectionAutolabel>true</sectionAutolabel>
+				</configuration>
+
+			</plugin>
+
+		</plugins>
+	</build>
+</project>

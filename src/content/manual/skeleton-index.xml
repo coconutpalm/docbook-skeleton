@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<book version="5.0"  
+		xmlns="http://docbook.org/ns/docbook"
+		xmlns:xlink="http://www.w3.org/1999/xlink"
+		xmlns:xi="http://www.w3.org/2001/XInclude"
+		xmlns:db="http://docbook.org/ns/docbook" 
+		xml:lang="en" 
+		id="manual">
+	
+	<!-- 
+	<mediaobject>            
+   		<imageobject>              
+   			<imagedata align="center" fileref="figures/BMW_splash.bmp" />            
+		</imageobject>          
+	</mediaobject>
+	 -->
+	
+	<info>
+		<title>Book Title</title>
+		<author>
+			<personname><firstname>David</firstname><surname>Orme</surname></personname>
+		</author>
+		<copyright>
+			<year>1013</year>
+			<holder>Copyright Holder</holder>
+		</copyright>		
+	</info>
+	
+	<xi:include href="firstChapter.xml" parse="xml"/>		
+	
+</book>

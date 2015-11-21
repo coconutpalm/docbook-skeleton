@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<chapter id="chapter-id-for-hyperlinks" version="5.0"
+	xmlns="http://docbook.org/ns/docbook" xmlns:xlink="http://www.w3.org/1999/xlink"
+	xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:db="http://docbook.org/ns/docbook"
+	xml:lang="en">
+	
+	<title>Chapter Title</title>
+
+	<section id="name-for-xref-hyperlinks">
+		<title>Title</title>
+		
+		<para>A paragraph</para>
+
+		<section>
+			<title>Subsection...</title>
+			
+			<programlisting language="xml"><xi:include href="../../../../../somewhere/else/to/include/pom.xml" parse="text" /></programlisting>
+		</section>
+	</section>
+
+</chapter>
